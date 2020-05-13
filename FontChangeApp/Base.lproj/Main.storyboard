@@ -116,20 +116,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eRr-Wv-Z20">
-                                <rect key="frame" x="18" y="802" width="378" height="31"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eop-D5-a5e">
+                                <rect key="frame" x="20" y="781" width="374" height="32"/>
+                                <segments>
+                                    <segment title="M"/>
+                                    <segment title="XS"/>
+                                    <segment title="S"/>
+                                    <segment title="L"/>
+                                    <segment title="XL"/>
+                                    <segment title="XXL"/>
+                                    <segment title="XXXL"/>
+                                </segments>
                                 <connections>
-                                    <action selector="sliderAction:" destination="mnT-ev-0iv" eventType="valueChanged" id="ovH-WZ-Zv3"/>
+                                    <action selector="segAction:" destination="mnT-ev-0iv" eventType="valueChanged" id="fLC-1S-VIv"/>
                                 </connections>
-                            </slider>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="LoX-oG-q9b" firstAttribute="bottom" secondItem="eRr-Wv-Z20" secondAttribute="bottom" constant="30" id="6kr-uj-6Hx"/>
+                            <constraint firstItem="LoX-oG-q9b" firstAttribute="trailing" secondItem="eop-D5-a5e" secondAttribute="trailing" constant="20" id="0Dq-dn-jA7"/>
                             <constraint firstItem="nMF-K0-oVl" firstAttribute="trailing" secondItem="EIX-a2-dK1" secondAttribute="trailing" id="8d4-iw-cfh"/>
-                            <constraint firstItem="LoX-oG-q9b" firstAttribute="trailing" secondItem="eRr-Wv-Z20" secondAttribute="trailing" constant="20" id="BG1-yH-cOb"/>
-                            <constraint firstItem="eRr-Wv-Z20" firstAttribute="leading" secondItem="LoX-oG-q9b" secondAttribute="leading" constant="20" id="C3A-N0-hcW"/>
                             <constraint firstItem="nMF-K0-oVl" firstAttribute="top" secondItem="EIX-a2-dK1" secondAttribute="bottom" constant="30" id="Epz-5b-UmU"/>
+                            <constraint firstItem="LoX-oG-q9b" firstAttribute="bottom" secondItem="eop-D5-a5e" secondAttribute="bottom" constant="50" id="F4q-mr-9OQ"/>
                             <constraint firstItem="7gf-vq-1UI" firstAttribute="leading" secondItem="LoX-oG-q9b" secondAttribute="leading" constant="20" id="Fgn-KS-3PB"/>
                             <constraint firstItem="LoX-oG-q9b" firstAttribute="trailing" secondItem="DtJ-Gx-nS3" secondAttribute="trailing" constant="20" id="GPk-HU-zsy"/>
                             <constraint firstItem="EIX-a2-dK1" firstAttribute="top" secondItem="DtJ-Gx-nS3" secondAttribute="bottom" constant="30" id="Oj5-rK-Vvm"/>
@@ -138,6 +146,7 @@
                             <constraint firstItem="7gf-vq-1UI" firstAttribute="top" secondItem="nMF-K0-oVl" secondAttribute="bottom" constant="20" id="bxC-1T-sZ9"/>
                             <constraint firstItem="LoX-oG-q9b" firstAttribute="trailing" secondItem="7gf-vq-1UI" secondAttribute="trailing" constant="20" id="eIF-xc-oNb"/>
                             <constraint firstItem="EIX-a2-dK1" firstAttribute="leading" secondItem="DtJ-Gx-nS3" secondAttribute="leading" id="fxT-9o-M4I"/>
+                            <constraint firstItem="eop-D5-a5e" firstAttribute="leading" secondItem="LoX-oG-q9b" secondAttribute="leading" constant="20" id="gK2-Bv-Ykh"/>
                             <constraint firstItem="EIX-a2-dK1" firstAttribute="trailing" secondItem="DtJ-Gx-nS3" secondAttribute="trailing" id="rhG-OO-y5r"/>
                             <constraint firstItem="DtJ-Gx-nS3" firstAttribute="leading" secondItem="LoX-oG-q9b" secondAttribute="leading" constant="20" id="wTN-xX-XPa"/>
                         </constraints>
@@ -147,7 +156,7 @@
                     <connections>
                         <outlet property="button" destination="EIX-a2-dK1" id="dZE-HO-ygU"/>
                         <outlet property="label" destination="DtJ-Gx-nS3" id="GjY-Bx-kyY"/>
-                        <outlet property="slider" destination="eRr-Wv-Z20" id="Yam-if-vhp"/>
+                        <outlet property="segment" destination="eop-D5-a5e" id="qeb-aX-62d"/>
                         <outlet property="textFiled" destination="nMF-K0-oVl" id="6sM-l3-Ujc"/>
                         <outlet property="textView" destination="7gf-vq-1UI" id="UoO-GN-Cke"/>
                     </connections>
