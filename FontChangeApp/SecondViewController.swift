@@ -14,7 +14,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var textFiled: UITextField!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var segment: UISegmentedControl!
     
     deinit {
         label.dispose()
@@ -27,27 +27,27 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        slider.minimumValue = 0.5
-        slider.maximumValue = 1.5
-        slider.value = Float(FontScaleManage.scaleValue)
+        
+        segment.selectedSegmentIndex = FontTextManage.fontSizeStyle.rawValue
 
-        label.bindFont { $0.font = .systemFont(ofSize: ceil(14 * $1)) }
-        button.bindFont { $0.titleLabel?.font = .systemFont(ofSize: ceil(16 * $1)) }
-        textFiled.bindFont { $0.font = .systemFont(ofSize: ceil(17 * $1)) }
-        textView.bindFont { $0.font = .systemFont(ofSize: ceil(14 * $1)) }
+        label.bindFont(style: .body)
+        button.bindFont(style: .caption1)
+        textFiled.bindFont(style: .headline)
+        textView.bindFont(style: .headline)
 
         NotificationCenter.default.addObserver(self, selector: #selector(fontChanged(notify:)), name: .fontScaleDidChange, object: nil)
 
     }
 
-    @IBAction func sliderAction(_ sender: UISlider) {
-        FontScaleManage.scaleValue = CGFloat(sender.value)
+    @IBAction func segAction(_ sender: UISegmentedControl) {
+        let index = sender.selectedSegmentIndex
+        FontTextManage.fontSizeStyle = FontContentSizeStyle(rawValue: index) ?? FontContentSizeStyle.contentSizeM
     }
-
+ 
     @objc func fontChanged(notify: Notification) {
-        guard let object = notify.object as? [String : Any] else { return }
-        guard let scale = object[FontScaleManage.ScaleValueKey] as? CGFloat else { return }
-        debugPrint("fontChanged scale - \(scale)")
+        guard let object = notify.object as? [String : FontContentSizeStyle] else { return }
+        guard let style = object[FontTextManage.ScaleValueKey] else { return }
+        debugPrint("SecondViewController fontChanged style - \(style)")
     }
 
 }

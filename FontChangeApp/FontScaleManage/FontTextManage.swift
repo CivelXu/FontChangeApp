@@ -10,16 +10,15 @@ import UIKit
 import Foundation
 
 extension Notification.Name {
-    public static let fontScaleDidChange = Notification.Name("com.xuxiwen.fontScaleDidChange")
+    public static let fontScaleDidChange = Notification.Name("com.xuxiwen.FontTextManageDidChange")
 }
 
 public final class FontTextManage {
-    
-    public static let ScaleValueKey = "FontScaleManage.ScaleValueKey"
 
-    private static let UserDefaultsKey = "FontScaleManage.UserDefaultsKey"
+    public static let ScaleValueKey = "FontTextManage.ScaleValueKey"
+    private static let UserDefaultsKey = "FontTextManage.UserDefaultsKey"
 
-    static var scaleValue: FontSizeChangeStyle {
+    static var fontSizeStyle: FontContentSizeStyle {
         set {
             UserDefaults.standard.set(newValue.rawValue, forKey: UserDefaultsKey)
             observableScale.value = newValue
@@ -27,11 +26,11 @@ public final class FontTextManage {
         }
         get {
             let value = UserDefaults.standard.integer(forKey: UserDefaultsKey)
-            return FontSizeChangeStyle(rawValue: value) ?? .contentSizeM
+            return FontContentSizeStyle(rawValue: value) ?? .contentSizeM
         }
     }
 
-    static var observableScale = Observable(scaleValue)
+    static var observableScale = Observable(fontSizeStyle)
  
 }
 

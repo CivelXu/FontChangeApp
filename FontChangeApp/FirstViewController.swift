@@ -26,18 +26,18 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        label.bindFont { $0.font = .systemFont(ofSize: ceil(14 * $1)) }
-        button.bindFont { $0.titleLabel?.font = .systemFont(ofSize: ceil(16 * $1)) }
-        textFiled.bindFont { $0.font = .systemFont(ofSize: ceil(17 * $1)) }
-        textView.bindFont { $0.font = .systemFont(ofSize: ceil(14 * $1)) }
-        
+        label.bindFont(style: .body)
+        button.bindFont(style: .caption1)
+        textFiled.bindFont(style: .headline)
+        textView.bindFont(style: .headline)
+
         NotificationCenter.default.addObserver(self, selector: #selector(fontChanged(notify:)), name: .fontScaleDidChange, object: nil)
     }
 
     @objc func fontChanged(notify: Notification) {
-        guard let object = notify.object as? [String : Any] else { return }
-        guard let scale = object[FontScaleManage.ScaleValueKey] as? CGFloat else { return }
-        debugPrint("fontChanged scale - \(scale)")
+        guard let object = notify.object as? [String : FontContentSizeStyle] else { return }
+        guard let style = object[FontTextManage.ScaleValueKey] else { return }
+        debugPrint("FirstViewController fontChanged style - \(style)")
     }
 
 }

@@ -11,26 +11,35 @@ import Foundation
 
 public protocol FontAutoAdjust: AnyObject {
     associatedtype Item
-    func bindFont(observerBlock: @escaping (CGFloat) -> Void)
-    func bindFont(observerBlock: @escaping (Item, CGFloat) -> Void)
+    func bindFont(style: FontTextStyle)
+    func bindFont(observerBlock: @escaping (FontContentSizeStyle) -> Void)
     func dispose()
 }
 
 public extension FontAutoAdjust {
 
-    func bindFont(observerBlock: @escaping (CGFloat) -> Void) {
-        FontScaleManage.observableScale.observe(on: self, observerBlock: observerBlock)
-    }
-
-    func bindFont(observerBlock: @escaping (Item, CGFloat) -> Void) {
-        FontScaleManage.observableScale.observe(on: self) { [weak self] scale in
+    func bindFont(style: FontTextStyle) {
+        FontTextManage.observableScale.observe(on: self) { [weak self] _ in
+            guard let `self` = self else { return }
             guard let item = self as? Self.Item else { return }
-            observerBlock(item, scale)
+            if let button = item as? UIButton {
+                button.titleLabel?.font = .applyFont(style: style)
+            } else if let label = item as? UILabel {
+                label.font = .applyFont(style: style)
+            } else if let textView = item as? UITextView {
+                textView.font = .applyFont(style: style)
+            } else if let textField = item as? UITextField {
+                textField.font = .applyFont(style: style)
+            }
         }
     }
 
+    func bindFont(observerBlock: @escaping (FontContentSizeStyle) -> Void) {
+        FontTextManage.observableScale.observe(on: self, observerBlock: observerBlock)
+    }
+
     func dispose() {
-        FontScaleManage.observableScale.remove(observer: self)
+        FontTextManage.observableScale.remove(observer: self)
     }
 
 }
