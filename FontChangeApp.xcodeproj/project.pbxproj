@@ -109,7 +109,7 @@
 		CE16BD192455353A00229E1A /* FontChangeApp */ = {
 			isa = PBXGroup;
 			children = (
-				CE16BD4A2455355A00229E1A /* FontScaleManage */,
+				CE16BD4A2455355A00229E1A /* FontTextManage */,
 				CE16BD1A2455353A00229E1A /* AppDelegate.swift */,
 				CE16BD1C2455353A00229E1A /* SceneDelegate.swift */,
 				CE16BD512455369500229E1A /* FirstViewController.swift */,
@@ -140,7 +140,7 @@
 			path = FontChangeAppUITests;
 			sourceTree = "<group>";
 		};
-		CE16BD4A2455355A00229E1A /* FontScaleManage */ = {
+		CE16BD4A2455355A00229E1A /* FontTextManage */ = {
 			isa = PBXGroup;
 			children = (
 				CE16BD4B2455358900229E1A /* Observable.swift */,
@@ -148,7 +148,7 @@
 				CE16BD4F2455362600229E1A /* FontAutoAdjust.swift */,
 				CEE848F4246BA05400BB9640 /* FontTextStyle.swift */,
 			);
-			path = FontScaleManage;
+			path = FontTextManage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

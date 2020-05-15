@@ -1,5 +1,5 @@
 //
-//  FontScaleManage.swift
+//  FontTextManage.swift
 //  FontChangeApp
 //
 //  Created by Civel Xu on 2020/4/26.
