@@ -22,20 +22,10 @@ public enum FontTypeSizes: Int {
 }
 
 public enum FontTypeStyle {
-    case largeTitle
-    case title1
-    case title2
-    case title3
-    case headline
-    case body
-    case callout
-    case subhead
-    case footnote
-    case caption1
-    case caption2
+    case largeTitle, title1, title2, title3, headline, body, callout, subhead, footnote, caption1, caption2
 }
 
-let fontSizeTable: [FontTypeStyle : [FontTypeSizes : CGFloat]] = {
+public let fontSizeTable: [FontTypeStyle : [FontTypeSizes : CGFloat]] = {
     return [
         .largeTitle : [.xSmall: 31, .small: 32, .medium: 33, .large: 34, .xLarge: 36, .xxLarge: 38, .xxxLarge: 40],
         .title1     : [.xSmall: 25, .small: 26, .medium: 27, .large: 28, .xLarge: 30, .xxLarge: 32, .xxxLarge: 34],
