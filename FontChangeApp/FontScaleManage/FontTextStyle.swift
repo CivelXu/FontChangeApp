@@ -97,7 +97,13 @@ extension FontTextStyle {
 }
 
 extension UIFont {
+
     static func applyFont(style: FontTextStyle, weight: Weight = .regular) -> UIFont {
         return .systemFont(ofSize: style.fontSize(), weight: weight)
     }
+    
+    static func applyFont(name: String, style: FontTextStyle) -> UIFont? {
+        return UIFont.init(name: name, size: style.fontSize())
+    }
+
 }
