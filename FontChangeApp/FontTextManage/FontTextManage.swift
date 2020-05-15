@@ -15,8 +15,8 @@ extension Notification.Name {
 
 public final class FontTextManage {
 
-    public static let ScaleValueKey = "FontTextManage.ScaleValueKey"
-    private static let UserDefaultsKey = "FontTextManage.UserDefaultsKey"
+    static let ScaleValueKey = "FontTextManage.ScaleValueKey"
+    static let UserDefaultsKey = "FontTextManage.UserDefaultsKey"
 
     static var defaultStyle: FontTypeSizes = .large
 

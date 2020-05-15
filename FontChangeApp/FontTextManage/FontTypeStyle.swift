@@ -53,11 +53,11 @@ extension FontTypeStyle {
 
 extension UIFont {
 
-    static func applyFont(style: FontTypeStyle, weight: Weight = .regular) -> UIFont {
+    public static func applyFont(style: FontTypeStyle, weight: Weight = .regular) -> UIFont {
         return .systemFont(ofSize: style.fontSize(), weight: weight)
     }
     
-    static func applyFont(name: String, style: FontTypeStyle) -> UIFont? {
+    public static func applyFont(name: String, style: FontTypeStyle) -> UIFont? {
         return UIFont.init(name: name, size: style.fontSize())
     }
 
