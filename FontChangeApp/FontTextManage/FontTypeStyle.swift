@@ -39,11 +39,11 @@ let fontSizeTable: [FontTypeStyle : [FontTypeSizes : CGFloat]] = {
     return [
         .largeTitle : [.xSmall: 31, .small: 32, .medium: 33, .large: 34, .xLarge: 36, .xxLarge: 38, .xxxLarge: 40],
         .title1     : [.xSmall: 25, .small: 26, .medium: 27, .large: 28, .xLarge: 30, .xxLarge: 32, .xxxLarge: 34],
-        .title2     : [.xSmall: 19,  .small: 26, .medium: 27, .large: 22, .xLarge: 24, .xxLarge: 26, .xxxLarge: 34],
+        .title2     : [.xSmall: 19, .small: 26, .medium: 27, .large: 22, .xLarge: 24, .xxLarge: 26, .xxxLarge: 34],
         .title3     : [.xSmall: 17, .small: 20, .medium: 21, .large: 20, .xLarge: 22, .xxLarge: 24, .xxxLarge: 28],
         .headline   : [.xSmall: 14, .small: 15, .medium: 16, .large: 17, .xLarge: 19, .xxLarge: 21, .xxxLarge: 21],
         .body       : [.xSmall: 14, .small: 15, .medium: 16, .large: 17, .xLarge: 19, .xxLarge: 21, .xxxLarge: 23],
-        .callout    : [.small: 14, .medium: 15, .large: 16, .xLarge: 18, .xxLarge: 20, .xxxLarge: 22],
+        .callout    : [.xSmall: 13, .small: 14, .medium: 15, .large: 16, .xLarge: 18, .xxLarge: 20, .xxxLarge: 22],
         .subhead    : [.xSmall: 12, .small: 13, .medium: 14, .large: 15, .xLarge: 17, .xxLarge: 19, .xxxLarge: 21],
         .footnote   : [.xSmall: 12, .small: 12, .medium: 12, .large: 13, .xLarge: 15, .xxLarge: 17, .xxxLarge: 19],
         .caption1   : [.xSmall: 11, .small: 11, .medium: 11, .large: 12, .xLarge: 14, .xxLarge: 16, .xxxLarge: 18],
