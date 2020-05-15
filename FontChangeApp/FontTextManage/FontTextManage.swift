@@ -18,19 +18,21 @@ public final class FontTextManage {
     public static let ScaleValueKey = "FontTextManage.ScaleValueKey"
     private static let UserDefaultsKey = "FontTextManage.UserDefaultsKey"
 
-    static var fontSizeStyle: FontContentSizeStyle {
+    static var defaultStyle: FontTypeSizes = .large
+
+    static var fontSizeStyle: FontTypeSizes {
         set {
             UserDefaults.standard.set(newValue.rawValue, forKey: UserDefaultsKey)
-            observableScale.value = newValue
+            observableStyle.value = newValue
             NotificationCenter.default.post(name: .fontScaleDidChange, object: [ScaleValueKey : newValue])
         }
         get {
             let value = UserDefaults.standard.integer(forKey: UserDefaultsKey)
-            return FontContentSizeStyle(rawValue: value) ?? .contentSizeM
+            return value == 0 ? defaultStyle : FontTypeSizes(rawValue: value) ?? defaultStyle
         }
     }
 
-    static var observableScale = Observable(fontSizeStyle)
+    static var observableStyle = Observable(fontSizeStyle)
  
 }
 

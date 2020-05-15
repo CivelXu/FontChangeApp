@@ -28,24 +28,26 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         
-        segment.selectedSegmentIndex = FontTextManage.fontSizeStyle.rawValue
+        segment.selectedSegmentIndex = FontTextManage.fontSizeStyle.rawValue - 1
 
-        label.bindFont(style: .body)
-        button.bindFont(style: .caption1)
+        label.bindFont(style: .title1)
+        button.bindFont(style: .title3)
         textFiled.bindFont(style: .headline)
-        textView.bindFont(style: .headline)
+        textView.bindFont(style: .caption2)
 
         NotificationCenter.default.addObserver(self, selector: #selector(fontChanged(notify:)), name: .fontScaleDidChange, object: nil)
 
     }
 
     @IBAction func segAction(_ sender: UISegmentedControl) {
-        let index = sender.selectedSegmentIndex
-        FontTextManage.fontSizeStyle = FontContentSizeStyle(rawValue: index) ?? FontContentSizeStyle.contentSizeM
+        let index = sender.selectedSegmentIndex + 1
+        if let style = FontTypeSizes(rawValue: index) {
+             FontTextManage.fontSizeStyle = style
+        }
     }
  
     @objc func fontChanged(notify: Notification) {
-        guard let object = notify.object as? [String : FontContentSizeStyle] else { return }
+        guard let object = notify.object as? [String : FontTypeSizes] else { return }
         guard let style = object[FontTextManage.ScaleValueKey] else { return }
         debugPrint("SecondViewController fontChanged style - \(style)")
     }

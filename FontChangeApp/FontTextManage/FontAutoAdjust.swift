@@ -11,15 +11,15 @@ import Foundation
 
 public protocol FontAutoAdjust: AnyObject {
     associatedtype Item
-    func bindFont(style: FontTextStyle)
-    func bindFont(observerBlock: @escaping (FontContentSizeStyle) -> Void)
+    func bindFont(style: FontTypeStyle)
+    func bindFont(observerBlock: @escaping (FontTypeSizes) -> Void)
     func dispose()
 }
 
 public extension FontAutoAdjust {
 
-    func bindFont(style: FontTextStyle) {
-        FontTextManage.observableScale.observe(on: self) { [weak self] _ in
+    func bindFont(style: FontTypeStyle) {
+        FontTextManage.observableStyle.observe(on: self) { [weak self] _ in
             guard let `self` = self else { return }
             guard let item = self as? Self.Item else { return }
             if let button = item as? UIButton {
@@ -34,12 +34,12 @@ public extension FontAutoAdjust {
         }
     }
 
-    func bindFont(observerBlock: @escaping (FontContentSizeStyle) -> Void) {
-        FontTextManage.observableScale.observe(on: self, observerBlock: observerBlock)
+    func bindFont(observerBlock: @escaping (FontTypeSizes) -> Void) {
+        FontTextManage.observableStyle.observe(on: self, observerBlock: observerBlock)
     }
 
     func dispose() {
-        FontTextManage.observableScale.remove(observer: self)
+        FontTextManage.observableStyle.remove(observer: self)
     }
 
 }

@@ -19,7 +19,7 @@
 		CE16BD502455362600229E1A /* FontAutoAdjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16BD4F2455362600229E1A /* FontAutoAdjust.swift */; };
 		CE16BD532455369500229E1A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16BD512455369500229E1A /* FirstViewController.swift */; };
 		CE16BD57245536A100229E1A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16BD55245536A100229E1A /* SecondViewController.swift */; };
-		CEE848F5246BA05400BB9640 /* FontTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE848F4246BA05400BB9640 /* FontTextStyle.swift */; };
+		CEE848F5246BA05400BB9640 /* FontTypeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE848F4246BA05400BB9640 /* FontTypeStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		CE16BD4F2455362600229E1A /* FontAutoAdjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAutoAdjust.swift; sourceTree = "<group>"; };
 		CE16BD512455369500229E1A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CE16BD55245536A100229E1A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		CEE848F4246BA05400BB9640 /* FontTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTextStyle.swift; sourceTree = "<group>"; };
+		CEE848F4246BA05400BB9640 /* FontTypeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTypeStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +146,7 @@
 				CE16BD4B2455358900229E1A /* Observable.swift */,
 				CE16BD4D245535AF00229E1A /* FontTextManage.swift */,
 				CE16BD4F2455362600229E1A /* FontAutoAdjust.swift */,
-				CEE848F4246BA05400BB9640 /* FontTextStyle.swift */,
+				CEE848F4246BA05400BB9640 /* FontTypeStyle.swift */,
 			);
 			path = FontTextManage;
 			sourceTree = "<group>";
@@ -285,7 +285,7 @@
 				CE16BD57245536A100229E1A /* SecondViewController.swift in Sources */,
 				CE16BD4C2455358900229E1A /* Observable.swift in Sources */,
 				CE16BD1B2455353A00229E1A /* AppDelegate.swift in Sources */,
-				CEE848F5246BA05400BB9640 /* FontTextStyle.swift in Sources */,
+				CEE848F5246BA05400BB9640 /* FontTypeStyle.swift in Sources */,
 				CE16BD1D2455353A00229E1A /* SceneDelegate.swift in Sources */,
 				CE16BD502455362600229E1A /* FontAutoAdjust.swift in Sources */,
 				CE16BD4E245535AF00229E1A /* FontTextManage.swift in Sources */,

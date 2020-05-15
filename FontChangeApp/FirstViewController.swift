@@ -26,16 +26,16 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        label.bindFont(style: .body)
-        button.bindFont(style: .caption1)
+        label.bindFont(style: .title1)
+        button.bindFont(style: .title3)
         textFiled.bindFont(style: .headline)
-        textView.bindFont(style: .headline)
+        textView.bindFont(style: .caption2)
 
         NotificationCenter.default.addObserver(self, selector: #selector(fontChanged(notify:)), name: .fontScaleDidChange, object: nil)
     }
 
     @objc func fontChanged(notify: Notification) {
-        guard let object = notify.object as? [String : FontContentSizeStyle] else { return }
+        guard let object = notify.object as? [String : FontTypeSizes] else { return }
         guard let style = object[FontTextManage.ScaleValueKey] else { return }
         debugPrint("FirstViewController fontChanged style - \(style)")
     }

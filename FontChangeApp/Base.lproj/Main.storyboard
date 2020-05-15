@@ -119,9 +119,9 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eop-D5-a5e">
                                 <rect key="frame" x="20" y="781" width="374" height="32"/>
                                 <segments>
-                                    <segment title="M"/>
                                     <segment title="XS"/>
                                     <segment title="S"/>
+                                    <segment title="M"/>
                                     <segment title="L"/>
                                     <segment title="XL"/>
                                     <segment title="XXL"/>
