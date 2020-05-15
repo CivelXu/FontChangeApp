@@ -8,6 +8,9 @@
 
 import UIKit
 
+/// Reference
+/// https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/typography
+
 public enum FontTypeSizes: Int {
     case xSmall = 1
     case small = 2
