@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// Reference
+/// Data Binding using Observable without 3rd party libraries
+/// https://github.com/kudoleh/iOS-Clean-Architecture-MVVM/blob/master/ExampleMVVM/Presentation/Utils/Observable.swift
+
 public final class Observable<Value> {
     
     struct Observer<Value> {
