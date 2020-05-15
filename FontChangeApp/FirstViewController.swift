@@ -36,7 +36,7 @@ class FirstViewController: UIViewController {
 
     @objc func fontChanged(notify: Notification) {
         guard let object = notify.object as? [String : FontTypeSizes] else { return }
-        guard let style = object[FontTextManage.ScaleValueKey] else { return }
+        guard let style = object[FontTextManage.FontSizeStyleKey] else { return }
         debugPrint("FirstViewController fontChanged style - \(style)")
     }
 

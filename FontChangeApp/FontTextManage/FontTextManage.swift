@@ -15,7 +15,7 @@ extension Notification.Name {
 
 public final class FontTextManage {
 
-    static let ScaleValueKey = "FontTextManage.ScaleValueKey"
+    static let FontSizeStyleKey = "FontTextManage.ScaleValueKey"
     static let UserDefaultsKey = "FontTextManage.UserDefaultsKey"
 
     static var defaultStyle: FontTypeSizes = .large
@@ -24,7 +24,7 @@ public final class FontTextManage {
         set {
             UserDefaults.standard.set(newValue.rawValue, forKey: UserDefaultsKey)
             observableStyle.value = newValue
-            NotificationCenter.default.post(name: .fontScaleDidChange, object: [ScaleValueKey : newValue])
+            NotificationCenter.default.post(name: .fontScaleDidChange, object: [FontSizeStyleKey : newValue])
         }
         get {
             let value = UserDefaults.standard.integer(forKey: UserDefaultsKey)
