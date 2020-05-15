@@ -12,6 +12,7 @@ import Foundation
 public protocol FontAutoAdjust: AnyObject {
     associatedtype Item
     func bindFont(style: FontTypeStyle)
+    func bindFont(observerBlock: @escaping () -> Void)
     func bindFont(observerBlock: @escaping (FontTypeSizes) -> Void)
     func dispose()
 }
@@ -32,6 +33,10 @@ public extension FontAutoAdjust {
                 textField.font = .applyFont(style: style)
             }
         }
+    }
+
+    func bindFont(observerBlock: @escaping () -> Void) {
+        FontTextManage.observableStyle.observe(on: self) { _ in observerBlock() }
     }
 
     func bindFont(observerBlock: @escaping (FontTypeSizes) -> Void) {
